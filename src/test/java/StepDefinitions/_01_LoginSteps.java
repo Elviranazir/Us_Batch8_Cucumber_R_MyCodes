@@ -3,6 +3,7 @@ package StepDefinitions;
 import Pages.DialogContent;
 import Utilities.BaseDriver;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,8 +33,7 @@ public class _01_LoginSteps {
 
     @Then("User should login successfully")
     public void user_should_login_successfully() {
-        WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(dc.dashBoard));
-        Assert.assertTrue(dc.dashBoard.isDisplayed());
+      dc.assertText(dc.dashBoard,"Dashboard");
     }
+
 }
