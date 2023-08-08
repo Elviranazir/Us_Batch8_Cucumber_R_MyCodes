@@ -28,13 +28,13 @@ public class _02_CountrySteps {
     public void createANewCountry() {
         dc.clickMethod(dc.addButton);
         dc.sendKeysMethod(dc.formNameInput, "Batch 8");
-        dc.sendKeysMethod(dc.formCodeInput, "BTC8");
+        dc.sendKeysMethod(dc.formCodeInput,"BTC");
         dc.clickMethod(dc.saveButton);
     }
 
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
-        dc.assertText(dc.successMessage, "successfully");
+        dc.assertText(dc.successMessage,"successfully");
     }
 
     @When("Delete a country")
@@ -51,5 +51,35 @@ public class _02_CountrySteps {
         dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//button[@color='warn']"),1));
         dc.clickMethod(dc.deleteButton);
         dc.clickMethod(dc.deleteConfirmButton);
+    }
+
+    @And("Click on add button")
+    public void clickOnAddButton() {
+        dc.clickMethod(dc.addButton);
+    }
+
+    @And("Enter {string} as country name and {string} as country code")
+    public void enterAsCountryNameAndAsCountryCode(String countryName, String countryCode) {
+        dc.sendKeysMethod(dc.formNameInput,countryName);
+        dc.sendKeysMethod(dc.formCodeInput,countryCode);
+
+    }
+
+    @When("Click on save button")
+    public void clickOnSaveButton() {
+        dc.clickMethod(dc.saveButton);
+    }
+
+    @And("Click on search button")
+    public void clickOnSearchButton() {
+        dc.clickMethod(dc.searchButton);
+    }
+
+    @And("Click on edit button")
+    public void clickOnEditButton() {
+        dc.sendKeysMethod(dc.searchNameInput,"Batch 8");
+        dc.sendKeysMethod(dc.searchCodeInput,"BTC");
+        dc.clickMethod(dc.searchButton);
+        lb.clickMethod(lb.editButton);
     }
 }
