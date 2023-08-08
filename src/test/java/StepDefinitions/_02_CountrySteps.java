@@ -1,5 +1,4 @@
 package StepDefinitions;
-
 import Pages.DialogContent;
 import Pages.LeftNavBar;
 import Utilities.BaseDriver;
@@ -68,18 +67,5 @@ public class _02_CountrySteps {
     @When("Click on save button")
     public void clickOnSaveButton() {
         dc.clickMethod(dc.saveButton);
-    }
-
-    @And("Click on search button")
-    public void clickOnSearchButton() {
-        dc.clickMethod(dc.searchButton);
-    }
-
-    @And("Click on edit button")
-    public void clickOnEditButton() {
-        dc.sendKeysMethod(dc.searchNameInput,"Batch 8");
-        dc.sendKeysMethod(dc.searchCodeInput,"BTC");
-        dc.clickMethod(dc.searchButton);
-        lb.clickMethod(lb.editButton);
     }
 }
