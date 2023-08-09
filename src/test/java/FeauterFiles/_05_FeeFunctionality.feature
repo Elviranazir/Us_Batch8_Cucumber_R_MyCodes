@@ -15,3 +15,6 @@ Feature: Fee Functionality
       | 54          |
     When Click on save button
     Then Success message should be displayed
+
+    #  TODO Create o scenario to delete all fees created in the firs scenario
+    #  TODO Use data table

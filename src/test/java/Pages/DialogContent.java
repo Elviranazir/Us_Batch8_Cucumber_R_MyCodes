@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.logging.XMLFormatter;
+
 public class DialogContent extends MyMethods {
 
     public DialogContent() {
@@ -65,6 +67,34 @@ public class DialogContent extends MyMethods {
 
     @FindBy(xpath ="(//span[text()='Priority'])[2]")
     public WebElement feePriority;
+
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement createExamName;
+
+    @FindBy(xpath = "(//span[.='Academic Period'])[1]")
+    public WebElement academicPeriod;
+
+    @FindBy(xpath = "//span[normalize-space()='Staj 2023']")
+    public WebElement academicPeriodOption;
+
+    @FindBy(xpath = "(//span[.='Grade Level'])[1]")
+    public WebElement gradeLevel;
+
+    @FindBy(xpath = "//span[normalize-space()='Software Development Engineer in Test']")
+    public WebElement gradeLevelOption;
+
+    @FindBy(xpath = "//div[contains(text(),'Description')]")
+    public WebElement examDescription;
+
+    @FindBy(xpath = "//div[contains(text(),'Notes')]")
+    public WebElement examNotes;
+    @FindBy(css = "body[id='tinymce']>p")
+    public WebElement descriptionAndNotesText;
+
+    @FindBy(css = "iframe[class=\"tox-edit-area__iframe\"]")
+    public WebElement iFrame;
+
+
 
 
 }
