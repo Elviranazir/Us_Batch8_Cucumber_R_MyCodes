@@ -1,3 +1,5 @@
+package StepDefinitions;
+
 import Pages.DialogContent;
 import Pages.LeftNavBar;
 import io.cucumber.java.en.And;

@@ -6,15 +6,16 @@ Feature: Fee Functionality
     And Click on Login Button
     And Navigate to Fees page
 
+  @Smoke
   Scenario: Create a Fee
     And Click on add button
     And Fill the add fee form
-      | Batch 8 Fee |
-      | b8          |
-      | bt8         |
-      | 54          |
+      | Group6El Fee |
+      | g6          |
+      | gr6         |
+      | 5040          |
     When Click on save button
     Then Success message should be displayed
 
-    #  TODO Create o scenario to delete all fees created in the firs scenario
-    #  TODO Use data table
+    # TODO Create a scenario to delete all fees created in the first scenario
+    # TODO Use Data Table

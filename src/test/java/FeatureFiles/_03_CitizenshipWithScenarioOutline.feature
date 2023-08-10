@@ -14,10 +14,10 @@ Feature: Citizenship Functionality
     Then Success message should be displayed
     Examples: Data for Create a Citizenship scenario
       |CitizenshipName|CitizenshipShortName|
-      |USA1           |U1                  |
-      |USA2           |U2                  |
-      |USA3           |U3                  |
-      |USA4           |U4                  |
+      |LELA1           |U1                  |
+      |LELA2           |U2                  |
+      |LELA3           |U3                  |
+      |LELA4           |U4                  |
 
     #TODO: Create Delete Citizenship scenario by using Scenario Outline and delete the citizenships you created in the first scenario
 
@@ -27,7 +27,7 @@ Feature: Citizenship Functionality
     Then Success message should be displayed
     Examples: Data for Delete Citizenship scenario
       |CitizenshipName|CitizenshipShortName|
-      |USA1           |U1                  |
-      |USA2           |U2                  |
-      |USA3           |U3                  |
-      |USA4           |U4                  |
+      |LELA1           |U1                  |
+      |LELA2           |U2                  |
+      |LELA3           |U3                  |
+      |LELA4           |U4                  |

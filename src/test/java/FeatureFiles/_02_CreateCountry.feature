@@ -19,6 +19,7 @@ Feature: Country Functionality
     And Click on Login Button
     And Navigate to Country page
 
+    @Smoke
   Scenario: Create a new country
 #    Given Navigate to Campus
 #    And Enter username and password
@@ -27,6 +28,7 @@ Feature: Country Functionality
     When Create a new country
     Then Success message should be displayed
 
+      @Smoke
   Scenario: Delete a country
 #    Given Navigate to Campus
 #    And Enter username and password
@@ -35,27 +37,30 @@ Feature: Country Functionality
     When Delete a country
     Then Success message should be displayed
 
+        @Regression
   Scenario:
 #      Given Navigate to Campus
 #      And Enter username and password
 #      And Click on Login Button
 #      And Navigate to Country page
     And Click on add button
-    And Enter "Batch 8" as country name and "BTC" as country code
+    And Enter "Group 6" as country name and "BTC" as country code
     When Click on save button
     Then Success message should be displayed
 
       #TODO Update the country you created
-  Scenario:
-#      Given Navigate to Campus
-#      And Enter username and password
-#      And Click on Login Button
-#      And Navigate to Country page
+#  Scenario:
+##      Given Navigate to Campus
+##      And Enter username and password
+##      And Click on Login Button
 
-    And Click on edit button
-    And Enter "Elvira" as country name and "E" as country code
-    When Click on save button
-    Then Success message should be displayed
+
+##      And Navigate to Country page
+#
+#    And Click on edit button
+#    And Enter "Elvira" as country name and "E" as country code
+#    When Click on save button
+#    Then Success message should be displayed
 
 
   Scenario: Delete a country

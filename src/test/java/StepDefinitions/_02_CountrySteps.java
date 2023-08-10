@@ -1,16 +1,13 @@
 package StepDefinitions;
+
 import Pages.DialogContent;
 import Pages.LeftNavBar;
-import Utilities.BaseDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
-import java.time.Duration;
 
 public class _02_CountrySteps {
     DialogContent dc = new DialogContent();
@@ -26,20 +23,20 @@ public class _02_CountrySteps {
     @When("Create a new country")
     public void createANewCountry() {
         dc.clickMethod(dc.addButton);
-        dc.sendKeysMethod(dc.formNameInput, "Batch 8");
-        dc.sendKeysMethod(dc.formCodeInput,"BTC");
+        dc.sendKeysMethod(dc.formNameInput, "Group 6");
+        dc.sendKeysMethod(dc.formCodeInput, "BTC");
         dc.clickMethod(dc.saveButton);
     }
 
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
-        dc.assertText(dc.successMessage,"successfully");
+        dc.assertText(dc.successMessage, "successfully");
     }
 
     @When("Delete a country")
     public void deleteACountry() {
-        dc.sendKeysMethod(dc.searchNameInput,"Batch 8");
-        dc.sendKeysMethod(dc.searchCodeInput,"BTC");
+        dc.sendKeysMethod(dc.searchNameInput, "Group 6");
+        dc.sendKeysMethod(dc.searchCodeInput, "BTC");
         dc.clickMethod(dc.searchButton);
 //        try {
 //            Thread.sleep(3000);
@@ -47,7 +44,7 @@ public class _02_CountrySteps {
 //            throw new RuntimeException(e);
 //        }
 
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//button[@color='warn']"),1));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//button[@color='warn']"), 1));
         dc.clickMethod(dc.deleteButton);
         dc.clickMethod(dc.deleteConfirmButton);
     }
@@ -59,8 +56,8 @@ public class _02_CountrySteps {
 
     @And("Enter {string} as country name and {string} as country code")
     public void enterAsCountryNameAndAsCountryCode(String countryName, String countryCode) {
-        dc.sendKeysMethod(dc.formNameInput,countryName);
-        dc.sendKeysMethod(dc.formCodeInput,countryCode);
+        dc.sendKeysMethod(dc.formNameInput, countryName);
+        dc.sendKeysMethod(dc.formCodeInput, countryCode);
 
     }
 
@@ -68,4 +65,5 @@ public class _02_CountrySteps {
     public void clickOnSaveButton() {
         dc.clickMethod(dc.saveButton);
     }
+
 }

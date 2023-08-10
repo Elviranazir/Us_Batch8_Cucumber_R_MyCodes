@@ -1,7 +1,7 @@
 package Pages;
 
-import Utilities.BaseDriver;
 import Utilities.MyMethods;
+import Utilities.ParameterDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,7 +11,7 @@ import java.util.logging.XMLFormatter;
 public class DialogContent extends MyMethods {
 
     public DialogContent() {
-        PageFactory.initElements(BaseDriver.getDriver(), this);
+        PageFactory.initElements(ParameterDriver.getDriver(), this);
     }
 
     @FindBy(css = "input[placeholder='Username']")
@@ -62,10 +62,11 @@ public class DialogContent extends MyMethods {
     @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[1]")
     public WebElement searchShortNameInput;
 
-    @FindBy(xpath ="//span[text()='Integration Code']")
+
+    @FindBy(xpath = "//input[@data-placeholder='Integration Code']")
     public WebElement feeIntegrationCode;
 
-    @FindBy(xpath ="(//span[text()='Priority'])[2]")
+    @FindBy(xpath = "(//input[@data-placeholder='Priority'])[2]")
     public WebElement feePriority;
 
     @FindBy(xpath = "//input[@type='text']")

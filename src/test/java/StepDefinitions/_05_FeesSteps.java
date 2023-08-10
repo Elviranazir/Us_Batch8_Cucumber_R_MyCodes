@@ -2,7 +2,7 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.LeftNavBar;
-import Utilities.BaseDriver;
+import Utilities.ParameterDriver;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.Keys;
@@ -28,7 +28,7 @@ public class _05_FeesSteps {
         dc.sendKeysMethod(dc.formCodeInput, dataList.get(1));
         dc.sendKeysMethod(dc.feeIntegrationCode, dataList.get(2));
         dc.sendKeysMethod(dc.feePriority,dataList.get(3));
-        Actions actions =new Actions(BaseDriver.getDriver());
+        Actions actions =new Actions(ParameterDriver.getDriver());
         Action action = actions.sendKeys(Keys.TAB).build();
         action.perform();
     }
