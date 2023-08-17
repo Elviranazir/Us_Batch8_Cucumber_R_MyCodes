@@ -1,6 +1,9 @@
 package Utilities;
+
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -31,10 +34,11 @@ public class ParameterDriver {
                     break;
                 case "edge":
                     threadDriver.set(new EdgeDriver());
-
                     break;
                 default:
-                    threadDriver.set(new ChromeDriver());
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--remote-allow-origins=*"); // To solve the error with Chrome v111
+                    threadDriver.set(new ChromeDriver(options));
                     break;
             }
             threadDriver.get().manage().window().maximize();
@@ -43,8 +47,14 @@ public class ParameterDriver {
     }
 
     public static void quitDriver(){
-        if (threadDriver!=null){
+        if (threadDriver.get()!=null){
             threadDriver.get().quit();
+            WebDriver driver = null;
+            threadDriver.set(driver);
         }
+    }
+
+    public static void setThreadDriverName(String browserName){
+        threadDriverName.set(browserName.toLowerCase());
     }
 }

@@ -19,7 +19,7 @@ Feature: Country Functionality
     And Click on Login Button
     And Navigate to Country page
 
-    @Smoke
+  @Smoke
   Scenario: Create a new country
 #    Given Navigate to Campus
 #    And Enter username and password
@@ -28,7 +28,7 @@ Feature: Country Functionality
     When Create a new country
     Then Success message should be displayed
 
-      @Smoke
+  @Smoke
   Scenario: Delete a country
 #    Given Navigate to Campus
 #    And Enter username and password
@@ -63,6 +63,7 @@ Feature: Country Functionality
 #    Then Success message should be displayed
 
 
+  @Regression
   Scenario: Delete a country
 #    Given Navigate to Campus
 #    And Enter username and password

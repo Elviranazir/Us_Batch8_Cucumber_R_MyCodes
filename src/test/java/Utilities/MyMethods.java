@@ -39,6 +39,14 @@ public class MyMethods {
         JavascriptExecutor js = (JavascriptExecutor) ParameterDriver.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
+    public static void myWait(int seconds) {
+        long milliseconds = seconds * 1000L; // Convert seconds to milliseconds
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
 
 
 }

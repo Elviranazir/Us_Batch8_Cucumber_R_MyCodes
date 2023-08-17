@@ -1,12 +1,11 @@
 package Pages;
 
+import Utilities.BaseDriver;
 import Utilities.MyMethods;
 import Utilities.ParameterDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.logging.XMLFormatter;
 
 public class DialogContent extends MyMethods {
 
@@ -26,7 +25,7 @@ public class DialogContent extends MyMethods {
     @FindBy(xpath = "//div[@class='ng-star-inserted']//span[contains(text(),'Dashboard')]")
     public WebElement dashBoard;
 
-    @FindBy(css = "svg[class='svg-inline--fa fa-plus']")
+    @FindBy(xpath = "//ms-add-button[@table='true']//span[3]")
     public WebElement addButton;
 
     @FindBy(xpath = "(//input[@data-placeholder='Name'])[2]")
@@ -41,7 +40,7 @@ public class DialogContent extends MyMethods {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
-    @FindBy(xpath = "//input[@id=\"ms-text-field-0\"]")
+    @FindBy(xpath = "//input[@data-placeholder='Name']")
     public WebElement searchNameInput;
 
     @FindBy(xpath = "//input[@data-placeholder='Code']")
@@ -61,7 +60,6 @@ public class DialogContent extends MyMethods {
 
     @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[1]")
     public WebElement searchShortNameInput;
-
 
     @FindBy(xpath = "//input[@data-placeholder='Integration Code']")
     public WebElement feeIntegrationCode;
@@ -89,13 +87,10 @@ public class DialogContent extends MyMethods {
 
     @FindBy(xpath = "//div[contains(text(),'Notes')]")
     public WebElement examNotes;
+
     @FindBy(css = "body[id='tinymce']>p")
     public WebElement descriptionAndNotesText;
 
     @FindBy(css = "iframe[class=\"tox-edit-area__iframe\"]")
     public WebElement iFrame;
-
-
-
-
 }

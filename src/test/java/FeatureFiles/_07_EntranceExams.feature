@@ -8,6 +8,8 @@ Feature: Entrance Exams Functionality
   Scenario Outline: Create an Entrance exam
     And Go to Entrance Exams page
     And Click on add button
+
+
     And Fill the Create Exam form with
     |<Exam Name>|
     And Create a description

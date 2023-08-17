@@ -1,37 +1,45 @@
 package StepDefinitions;
 
 
+import Utilities.ExcelUtilities;
 import Utilities.ParameterDriver;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+
 public class Hooks {
-    @Before // runs before each scenario in the feature file
-    public void beforeScenario(){
+    LocalDateTime startTime;
+    LocalDateTime endTime;
+
+    @Before // Runs before each scenario in the feature files
+    public void beforeScenario() {
+        startTime = LocalDateTime.now();
         System.out.println("Before Scenario runs");
     }
 
-    @After // runs after each scenario in the feature file
-    public void afterScenario(Scenario scenario){
-        if (scenario.isFailed()){
+    @After // Runs after each scenario in the feature files
+    public void afterScenario(Scenario scenario) {
+        endTime = LocalDateTime.now();
+        Duration duration = Duration.between(startTime,endTime);
+        if (scenario.isFailed()) { // take screen shot when the scenario fails
             final byte[] byteImage = ((TakesScreenshot) ParameterDriver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(byteImage, "image/png", scenario.getName());
         }
+        ExcelUtilities.writeInExcel("src/test/java/ApachePOI/Resources/CampusScenarioResults.xlsx", scenario,startTime, endTime,duration);
         ParameterDriver.quitDriver();
     }
 
-
-
-//    @BeforeStep // runs before each step in the feature file
+//    @BeforeStep // Runs before each step in a scenario in the feature files
 //    public void beforeStep(){
 //        System.out.println("Before Step runs");
 //    }
 //
-//    @AfterStep // runs after each step in the feature file
+//    @AfterStep // Runs after each step in a scenario in the feature files
 //    public void afterStep(){
 //        System.out.println("After Step runs");
 //    }
-//
 
 }
